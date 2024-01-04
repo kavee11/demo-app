@@ -1,0 +1,400 @@
+* {
+  font-family: sans-serif;
+}
+
+body {
+  background: rgb(36, 35, 35);
+  margin: 0;
+  padding: 0;
+}
+
+.modal .popUpModal {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 500px;
+  height: fit-content;
+  z-index: 1;
+  display: none;
+}
+
+.popUpModal .modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: fit-content;
+  z-index: 2;
+  padding-bottom: 5px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.popupBtn {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  justify-items: center;
+  width: 100px;
+  height: 30px;
+  border: 0;
+  border-radius: 25px;
+  background: #3081d0;
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.popupBtn:hover {
+  background: #3081d0;
+  color: white;
+  font-weight: 600;
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 0;
+  background: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.modal.active .popUpModal {
+  display: block;
+}
+
+.modal.active .content {
+  transition: all 100ms ease-in-out;
+}
+
+.header {
+  width: 100%;
+  border-bottom: 1px solid #bbb;
+}
+
+h6 {
+  text-align: start;
+  margin: 2px;
+  padding: 5px;
+}
+
+form {
+  text-align: start;
+  padding: 10px;
+}
+
+form .searchBar {
+  width: 99%;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid #bbb;
+  margin-top: 7px;
+  padding-left: 5px;
+}
+
+.clientTable {
+  margin-top: 6px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  width: 500px;
+  overflow-y: auto;
+  height: 200px;
+}
+
+.dataTable {
+  border-collapse: collapse;
+  margin: 5px;
+  font-size: 12px;
+  width: 475px;
+  font-weight: 600;
+}
+
+.dataTable th {
+  text-align: start;
+  font-weight: 100;
+  opacity: 70%;
+  margin: 8px;
+  padding-bottom: 5px;
+}
+
+.dataTable td {
+  text-align: start;
+  padding-top: 12px;
+}
+
+.dataTable tbody tr:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.dataTable tbody .headtr:hover {
+  background-color: white;
+}
+
+.headtr {
+  border-bottom: 1px solid #bbb;
+}
+
+.pagination {
+  display: flex;
+  position: fixed;
+  font-size: 10px;
+  width: 480px;
+  height: 30px;
+  border-bottom: 1px solid #bbb;
+  border-left: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.pagination-menu {
+  display: flex;
+  position: fixed;
+  right: 0%;
+}
+
+.nextBtn {
+  position: absolute;
+  right: 0;
+  width: 70px;
+  margin-right: 10px;
+  margin-top: 10px;
+  height: 30px;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: #3081d0;
+  font-size: 10px;
+  color: #fff;
+  border: 0;
+}
+
+.searchContainer {
+  position: relative;
+  width: 98%;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 60%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  pointer-events: none;
+  font-size: 12px;
+  color: #999;
+  padding: 5px;
+}
+
+.exitBtn {
+  position: absolute;
+  top: 60%;
+  right: 40px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none;
+  font-size: 12px;
+  color: black;
+  border-radius: 25px;
+  padding: 3px;
+}
+
+.searchContainer input[type='text']:not(:placeholder-shown) + .closeBtn {
+  display: inline-block;
+}
+
+.modal-body {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: fit-content;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #bbb;
+  margin: 0 5px;
+}
+
+.active-dot {
+  background-color: #3081d0;
+}
+
+.deactive-dot {
+  background-color: #999;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.latterPart {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #bbb;
+  margin-top: 30px;
+  height: 40px;
+}
+
+.dropForm {
+  border-top: 1px solid #bbb;
+  display: list-item;
+}
+
+.dropDown {
+  height: 40px;
+  width: 480px;
+  border-radius: 20px;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dropdown2 {
+  height: 40px;
+  width: 480px;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.data {
+  display: none;
+  overflow-y: auto;
+  height: 220px;
+}
+
+.checkBox {
+  font-size: 12px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  padding: 10px;
+  height: fit-content;
+  border-radius: 10px;
+}
+
+.mainCheck {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+#cb {
+  margin-top: 40px;
+}
+
+.phases {
+  margin: 10px;
+}
+
+.phaseTable {
+  border-collapse: collapse;
+  width: 100%;
+  padding-top: 10px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.phaseTable td {
+  font-size: 12px;
+  height: 30px;
+  border-bottom: 1px solid #bbb;
+}
+
+.phaseHeading {
+  font-size: 12px;
+  opacity: 50%;
+  height: 40px;
+  padding-top: 10px;
+  border: 1px solid #bbb;
+}
+
+.phaseTable th {
+  text-align: start;
+}
+
+.pahseDetails1 {
+  border-left: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+}
+
+.pahseDetails2 {
+  border-left: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+}
+
+.pahseDetails1:hover {
+  background: #f5f5f5;
+}
+
+.pahseDetails2:hover {
+  background: #f5f5f5;
+}
+
+.job {
+  margin-top: 10px;
+  font-size: 12px;
+  align-items: center;
+  display: flex;
+}
+
+.handlerHead {
+  text-align: start;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.handler {
+  position: relative;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  height: 80px;
+}
+
+.option1,
+.option2 {
+  padding-top: 10px;
+  white-space: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}

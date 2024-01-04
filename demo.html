@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Demo</title>
+    <!-- external css file-->
+    <link href="demo.css" rel="stylesheet" />
+    <!--external js-->
+    <script src="demo.js"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- fontAwsome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- pop-up window -->
+    <button class="popupBtn" onclick="openPopUp()">Open Model</button>
+
+    <div class="modal" id="modal">
+      <div class="popUpModal"></div>
+      <div class="modal-content">
+        <button class="close-btn" onclick="openPopUp()">&times;</button>
+
+        <div class="header">
+          <h6>New Job</h6>
+        </div>
+
+        <div class="modal-body">
+          <div class="slider">
+            <!-- table data -->
+            <div class="slide active">
+              <!-- search client and select-->
+              <form class="form-control">
+                <label class="headerLable">Select a client</label>
+                <br />
+                <div class="searchContainer">
+                  <input
+                    class="searchBar"
+                    id="searchClient"
+                    type="text"
+                    name="search"
+                    placeholder="Search"
+                  />
+
+                  <div class="exitBtn">&#x2715;</div>
+                  <div class="searchIcon"><i class="fas fa-search"></i></div>
+                </div>
+
+                <div class="clientTable">
+                  <table class="dataTable">
+                    <tr class="headtr">
+                      <th></th>
+                      <th>Organization</th>
+                      <th>Code</th>
+                      <th>Handler</th>
+                    </tr>
+                    <tbody id="dataTable"></tbody>
+                  </table>
+                </div>
+                <div class="pagination">
+                  <div class="pagination-menu">
+                    <p id="dataRange"></p>
+                    <a onclick="prevPage()">&laquo;</a>
+                    <a onclick="nextPage()"> &raquo;</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- second slider  -->
+            <div class="slide">
+              <form class="dropForm">
+                <label class="headerLabel">Use a Template?</label>
+                <br />
+                <select id="dropdown" class="dropDown">
+                  <option value="Select a Template">Select a Template</option>
+                  <option value="template1">Template 1</option>
+                </select>
+              </form>
+
+              <!-- Contents of the Template 1 -->
+              <form class="dropForm">
+                <div class="dropContent">
+                  <div id="contentTemp" class="data">
+                    <!-- View drop down -->
+                    <select id="dropdown2" class="dropdown2">
+                      <option value="Select a Template">Select a View</option>
+                      <option value="view1">View 1</option>
+                    </select>
+                    <br />
+                    <div class="mainCheck">
+                      <!-- container 1 -->
+                      <div>
+                        <h6 style="opacity: 50%">copy</h6>
+                        <div class="checkBox">
+                          <input
+                            type="checkbox"
+                            id="dates"
+                            name="dates"
+                            value="dates"
+                          />
+                          <label for="dates"> Dates </label>
+                          <br />
+                          <input
+                            type="checkbox"
+                            id="status"
+                            name="status"
+                            value="status"
+                          />
+                          <label for="status"> Status </label>
+                          <br />
+                          <input
+                            type="checkbox"
+                            id="bill"
+                            name="bill"
+                            value="bill"
+                          />
+                          <label for="bill"> Billing Plans </label>
+                          <br />
+                          <input
+                            type="checkbox"
+                            id="act"
+                            name="act"
+                            value="act"
+                          />
+                          <label for="act"> Activites </label>
+                          <br />
+                          <input
+                            type="checkbox"
+                            id="phase"
+                            name="phase"
+                            value="phase"
+                          />
+                          <label for="phase"> Phase Quotes </label>
+                          <br />
+                          <input
+                            type="checkbox"
+                            id="stages"
+                            name="stages"
+                            value="stages"
+                          />
+                          <label for="stages"> Stages </label>
+                          <br />
+                        </div>
+                      </div>
+                      <!-- container 2 -->
+                      <div>
+                        <h6>Include Estimates</h6>
+                        <div class="checkBox">
+                          <input
+                            type="checkbox"
+                            id="time"
+                            name="time"
+                            value="time"
+                          />
+                          <label for="time"> Time </label>
+                          <br />
+                          <input
+                            type="checkbox"
+                            id="material"
+                            name="material"
+                            value="material"
+                          />
+                          <label for="material"> Material </label>
+                          <br />
+                          <input
+                            type="checkbox"
+                            id="purchase"
+                            name="purchase"
+                            value="purchase"
+                          />
+                          <label for="purchase"> Purchase </label>
+                          <br />
+                          <input type="checkbox" id="cb" name="cb" value="cb" />
+                          <label for="cb"> Use Actual Values </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Phases -->
+                    <h6>Phases to copy</h6>
+                    <div class="phases">
+                      <table class="phaseTable">
+                        <tr class="phaseHeading">
+                          <th></th>
+                          <th>Phase</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr class="pahseDetails1">
+                          <td><input type="checkbox" /></td>
+                          <td>001</td>
+                          <td>Phase Description</td>
+                        </tr>
+                        <tr class="pahseDetails2">
+                          <td><input type="checkbox" /></td>
+                          <td>002</td>
+                          <td>Phase Description</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- third slider which contains -->
+            <div class="slide">
+              <form class="dropForm">
+                <label class="headerLabel">Extra Options</label>
+                <br />
+                <div class="job">
+                  <input
+                    type="checkbox"
+                    id="jobNo"
+                    name="jobNo"
+                    value="jobNo"
+                  />
+                  <label for="jobNo" class="jobNo"> Own Job Number </label>
+                </div>
+
+                <h6 class="handlerHead">Handler</h6>
+                <div class="handler">
+                  <div class="option1">
+                    <input
+                      type="radio"
+                      id="Cdh"
+                      name="options"
+                      value="option1"
+                    />
+                    <label for="option1">Client Default Handler</label>
+                  </div>
+
+                  <div class="option2">
+                    <input
+                      type="radio"
+                      id="Cu"
+                      name="options"
+                      value="option2"
+                    />
+                    <label for="option2">Current User</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Dots -->
+          <div class="latterPart">
+            <div class="dots-container">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <button class="nextBtn" id="nextBtn" onclick="nextSlide()">
+              Next
+            </button>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+
+    <script src="demo.js"></script>
+  </body>
+</html>
